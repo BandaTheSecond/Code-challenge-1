@@ -15,6 +15,7 @@ function calculateChaiIngredients(numberOfCups) {
     console.log("Enjoy your Tea!");
   }
   
+  // Prompt user for the number of cups and call the function
   const cups = Number(prompt("Hi! How many cups of Tea would you like to prepare?"));
   calculateChaiIngredients(cups);
   

@@ -4,7 +4,7 @@ function estimateTransactionFee(amountToSend) {
       console.log("Please enter a valid amount above Ksh.0.");
       return;
     }
-  
+  // Calculate the transaction fee based on the amount entered
     const feePercentage = 0.015;
     let fee = amountToSend * feePercentage;
   
@@ -15,7 +15,7 @@ function estimateTransactionFee(amountToSend) {
     }
   
     const total = amountToSend + fee;
-  
+  // Output the results to the console
     console.log(`Sending KES ${amountToSend}:`);
     console.log(`Calculated Transaction Fee: KES ${fee}`);
     console.log(`Total amount to be debited: KES ${total}\n`);
