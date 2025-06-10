@@ -1,3 +1,5 @@
+const prompt = require('prompt-sync')({ sigint: true }); 
+
 function estimateTransactionFee(amountToSend) {
     //ensuring amount entered is a number
     if (isNaN(amountToSend) || amountToSend <= 0) {

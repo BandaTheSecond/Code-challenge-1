@@ -1,21 +1,36 @@
-function calculateChaiIngredients(numberOfCups) {
+// chai.js
+const prompt = require('prompt-sync')({ sigint: true }); // Node.js prompt
 
-    //number of cups multiplied by the ratio per cup.
-    const water = numberOfCups * 200;//ml
-    const milk = numberOfCups * 50;//ml
-    const teaLeaves = numberOfCups * 1;//tablespoon
-    const sugar = numberOfCups * 2;//teaspoon(s)
+function chaiIngredientscalculator(numberOfCups) {
+  // ingredients per cup
+  const waterPerCup = 200;
+  const milkPerCup = 50;
+  const majaniPerCup = 1;
+  const sugarPerCup = 2;
 
-  //console output
-    console.log(`To make ${numberOfCups} cups of Kenyan Tea, you will need:`);
-    console.log(`Water: ${water} ml`);
-    console.log(`Milk: ${milk} ml`);
-    console.log(`Tea Leaves (Majani): ${teaLeaves} tablespoons`);
-    console.log(`Sugar (Sukari): ${sugar} teaspoons\n`);
-    console.log("Enjoy your Tea!");
-  }
-  
-  // Prompt user for the number of cups and call the function
-  const cups = Number(prompt("Hi! How many cups of Tea would you like to prepare?"));
-  calculateChaiIngredients(cups);
-  
+  // total ingredients
+  const totalWater = numberOfCups * waterPerCup;
+  const totalMilk = numberOfCups * milkPerCup;
+  const totalMajani = numberOfCups * majaniPerCup;
+  const totalSugar = numberOfCups * sugarPerCup;
+
+  // display results
+  console.log(`\nTo make ${numberOfCups} cup(s) of Chai Bora tea, you will need:`);
+  console.log(`• Water: ${totalWater} ml`);
+  console.log(`• Milk: ${totalMilk} ml`);
+  console.log(`• Majani (tea leaves): ${totalMajani} tbsp`);
+  console.log(`• Sukari (sugar): ${totalSugar} tsp`);
+  console.log("\nEnjoy your Chai Bora Tea! ☕");
+}
+
+// prompt user
+const input = prompt("How many cups of Chai Bora tea would you like? ");
+const numberOfCups = Number(input);
+
+// validate and run
+if (!isNaN(numberOfCups) && numberOfCups > 0) {
+  chaiIngredientscalculator(numberOfCups);
+} else {
+  console.log("Please enter a valid positive number of cups.");
+}
+
